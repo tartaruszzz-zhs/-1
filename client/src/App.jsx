@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/-1/">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route
