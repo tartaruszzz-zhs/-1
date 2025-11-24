@@ -58,21 +58,20 @@ exports.submitTest = async (req, res) => {
 
         // Prepare Radar Values (Order: steel_pen, pencil, marker, quill, ballpoint, brush, highlighter, invisible)
         // We should probably define a fixed order for the frontend radar chart.
-        const typeOrder = ['steel_pen', 'pencil', 'marker', 'quill', 'ballpoint', 'brush', 'highlighter', 'invisible'];
+        const typeOrder = ['steel_pen', 'pencil', 'marker', 'quill', 'ballpoint, brush', 'highlighter', 'invisible'];
         const radarValues = typeOrder.map(type => scores[type] || 0);
 
         // Save Result (if user is logged in)
         let resultId = null;
         if (uid) {
-            const testResult = new TestResult({
+            const testResult = await TestResult.create({
                 uid,
                 answers: answerTypes, // Saving the types, not the 'A/B' letters, for easier analysis
                 scores,
                 radar_values: radarValues,
                 dominant_type: dominantType
             });
-            await testResult.save();
-            resultId = testResult._id;
+            resultId = testResult.id;
         }
 
         // Return Result

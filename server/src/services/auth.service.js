@@ -87,17 +87,16 @@ exports.verifyCode = async (phone, code) => {
     await delCode(key);
 
     // Find or create user
-    let user = await User.findOne({ phone });
+    let user = await User.findOne({ where: { phone } });
     if (!user) {
-        user = new User({ phone });
-        await user.save();
+        user = await User.create({ phone });
     } else {
-        user.last_login = Date.now();
+        user.last_login = new Date();
         await user.save();
     }
 
     // Generate JWT
-    const token = jwt.sign({ uid: user._id, role: user.roles }, process.env.JWT_SECRET || 'secret', { expiresIn: '7d' });
+    const token = jwt.sign({ uid: user.id, role: user.roles }, process.env.JWT_SECRET || 'secret', { expiresIn: '7d' });
 
     return { token, user };
 };

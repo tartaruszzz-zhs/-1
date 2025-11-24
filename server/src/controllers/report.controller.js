@@ -8,36 +8,34 @@ exports.createReportOrder = async (req, res) => {
         const uid = req.user.uid;
 
         // Verify test ownership
-        const testResult = await TestResult.findOne({ _id: test_id, uid });
+        const testResult = await TestResult.findOne({ where: { id: test_id, uid } });
         if (!testResult) {
             return res.status(404).json({ message: 'Test result not found' });
         }
 
         // Create Report Record (Pending)
-        const report = new Report({
+        const report = await Report.create({
             uid,
             test_id,
             type,
             status: 'pending'
         });
-        await report.save();
 
         // Create Payment Record
         const price = type === 'ai' ? 19.9 : 199.0;
-        const payment = new Payment({
+        const payment = await Payment.create({
             uid,
-            report_id: report._id,
+            report_id: report.id,
             amount: price,
             status: 'pending'
         });
-        await payment.save();
 
         // Return Payment Info (Mock)
         res.json({
             status: 'ok',
-            order_id: payment._id,
+            order_id: payment.id,
             amount: price,
-            payment_url: `http://localhost:3000/mock-pay?order_id=${payment._id}` // Mock payment page
+            payment_url: `http://localhost:3000/mock-pay?order_id=${payment.id}` // Mock payment page
         });
 
     } catch (err) {
@@ -51,7 +49,7 @@ exports.getReport = async (req, res) => {
         const { id } = req.params;
         const uid = req.user.uid;
 
-        const report = await Report.findOne({ _id: id, uid });
+        const report = await Report.findOne({ where: { id, uid } });
         if (!report) {
             return res.status(404).json({ message: 'Report not found' });
         }

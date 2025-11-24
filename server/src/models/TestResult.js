@@ -1,33 +1,46 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db');
+const User = require('./User');
 
-const TestResultSchema = new mongoose.Schema({
+const TestResult = sequelize.define('TestResult', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     uid: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: User,
+            key: 'id'
+        }
     },
     test_version: {
-        type: String,
-        default: 'v1.0',
+        type: DataTypes.STRING,
+        defaultValue: 'v1.0'
     },
     answers: {
-        type: [String], // Array of answer types e.g. ['steel_pen', 'pencil', ...]
-        required: true,
+        type: DataTypes.JSON,
+        allowNull: false
     },
     scores: {
-        type: Map,
-        of: Number, // e.g. { 'steel_pen': 5, 'pencil': 2 }
+        type: DataTypes.JSON
     },
     radar_values: {
-        type: [Number], // Array of values for radar chart
+        type: DataTypes.JSON
     },
     dominant_type: {
-        type: String, // e.g. 'steel_pen'
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
+        type: DataTypes.STRING
+    }
+}, {
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
 });
 
-module.exports = mongoose.model('TestResult', TestResultSchema);
+// Define association
+User.hasMany(TestResult, { foreignKey: 'uid' });
+TestResult.belongsTo(User, { foreignKey: 'uid' });
+
+module.exports = TestResult;

@@ -1,36 +1,55 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db');
+const User = require('./User');
+const TestResult = require('./TestResult');
 
-const ReportSchema = new mongoose.Schema({
+const Report = sequelize.define('Report', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     uid: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: User,
+            key: 'id'
+        }
     },
     test_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'TestResult',
-        required: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: TestResult,
+            key: 'id'
+        }
     },
     type: {
-        type: String,
-        enum: ['ai', 'human'],
-        default: 'ai',
+        type: DataTypes.ENUM('ai', 'human'),
+        defaultValue: 'ai'
     },
     status: {
-        type: String,
-        enum: ['pending', 'processing', 'ready', 'failed'],
-        default: 'pending',
+        type: DataTypes.ENUM('pending', 'processing', 'ready', 'failed'),
+        defaultValue: 'pending'
     },
     report_url: {
-        type: String,
+        type: DataTypes.STRING
     },
     content: {
-        type: Object, // JSON content from LLM
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
+        type: DataTypes.JSON // JSON content from LLM
+    }
+}, {
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
 });
 
-module.exports = mongoose.model('Report', ReportSchema);
+// Associations
+User.hasMany(Report, { foreignKey: 'uid' });
+Report.belongsTo(User, { foreignKey: 'uid' });
+
+TestResult.hasOne(Report, { foreignKey: 'test_id' });
+Report.belongsTo(TestResult, { foreignKey: 'test_id' });
+
+module.exports = Report;

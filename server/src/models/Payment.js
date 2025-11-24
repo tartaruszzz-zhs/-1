@@ -1,37 +1,58 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db');
+const User = require('./User');
+const Report = require('./Report');
 
-const PaymentSchema = new mongoose.Schema({
+const Payment = sequelize.define('Payment', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     uid: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: User,
+            key: 'id'
+        }
     },
     report_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Report',
-        required: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Report,
+            key: 'id'
+        }
     },
     amount: {
-        type: Number,
-        required: true,
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false
     },
     currency: {
-        type: String,
-        default: 'CNY',
+        type: DataTypes.STRING,
+        defaultValue: 'CNY'
     },
     method: {
-        type: String,
-        default: 'wechat',
+        type: DataTypes.STRING,
+        defaultValue: 'wechat'
     },
     status: {
-        type: String,
-        enum: ['pending', 'paid', 'failed', 'refunded'],
-        default: 'pending',
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
+        type: DataTypes.ENUM('pending', 'paid', 'failed', 'refunded'),
+        defaultValue: 'pending'
+    }
+}, {
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
 });
 
-module.exports = mongoose.model('Payment', PaymentSchema);
+// Associations
+User.hasMany(Payment, { foreignKey: 'uid' });
+Payment.belongsTo(User, { foreignKey: 'uid' });
+
+// Report association will be defined in Report.js or here if Report is loaded.
+// To avoid circular dependency issues, sometimes it's better to define associations in a separate file or be careful with require order.
+// For now, let's assume Report is required.
+
+module.exports = Payment;
