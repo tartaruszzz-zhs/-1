@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const LandingPage = () => {
     const navigate = useNavigate();
     const [phone, setPhone] = useState('');
     const [code, setCode] = useState('');
-    const [step, setStep] = useState('phone'); // phone, code
+    // step: 'landing' (欢迎页) -> 'phone' (输入手机) -> 'code' (输入验证码)
+    const [step, setStep] = useState('landing');
     const [loading, setLoading] = useState(false);
 
     const handleSendCode = async () => {
@@ -37,98 +38,147 @@ const LandingPage = () => {
         }
     };
 
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#f0f0f0]">
-            {/* Background Ambience */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-r from-gray-200 to-gray-300 blur-[100px] opacity-60"></div>
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-r from-gray-300 to-gray-400 blur-[100px] opacity-60"></div>
+    // 渲染欢迎页 (新设计)
+    const renderLanding = () => (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="flex flex-col items-center justify-between min-h-screen bg-[#FFFDF5] px-6 py-10 text-center"
+        >
+            {/* Header / Logo */}
+            <div className="flex flex-col items-center gap-2 mt-8">
+                <div className="text-4xl">🐶</div>
+                <h1 className="text-2xl font-bold text-[#4A4A4A] tracking-wider">测测笔格</h1>
             </div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative z-10 w-full max-w-md px-6"
-            >
-                <div className="text-center mb-12">
-                    <h1 className="text-6xl font-serif font-bold text-ink-black mb-4 tracking-tight">测测笔格</h1>
-                    <p className="text-lg text-gray-500 font-light tracking-widest uppercase">探索你灵魂的笔触</p>
+            {/* Main Content */}
+            <div className="flex flex-col items-center gap-6 mt-8">
+                <h2 className="text-3xl font-bold text-[#5D4037] leading-tight">
+                    发现你的笔格人格<br />
+                    遇见与你同频的人!
+                </h2>
+                <p className="text-[#8D6E63] text-sm font-medium">
+                    20+ 精准心理题，2分钟完成测试
+                </p>
+
+                <button
+                    onClick={() => setStep('phone')}
+                    className="bg-[#FF9F43] text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg shadow-orange-200 transform transition-transform active:scale-95 hover:bg-[#FF8F23] mt-4"
+                >
+                    开始测试
+                </button>
+
+                {/* Illustration Placeholder */}
+                <div className="mt-8 relative w-64 h-48 flex items-center justify-center">
+                    {/* 这里可以用 CSS 画一个简单的示意图或者放 Emoji */}
+                    <div className="text-9xl">✏️🐕🎨</div>
+                </div>
+            </div>
+
+            {/* Footer */}
+            <div className="flex flex-col items-center gap-4 mb-4 w-full">
+                <p className="text-[#8D6E63] text-sm">
+                    已有 <span className="font-bold">14,328</span> 人参与
+                </p>
+                <div className="flex gap-6 text-xs text-[#BCAAA4]">
+                    <span>关于我们</span>
+                    <span>隐私协议</span>
+                    <span>联系方</span>
+                </div>
+            </div>
+        </motion.div>
+    );
+
+    // 渲染登录表单 (复用原有逻辑,样式微调适配新风格)
+    const renderLoginForm = () => (
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="min-h-screen flex flex-col items-center justify-center bg-[#FFFDF5] px-6"
+        >
+            <div className="w-full max-w-md bg-white p-8 rounded-3xl shadow-xl border border-orange-100">
+                <div className="text-center mb-8">
+                    <h2 className="text-2xl font-bold text-[#5D4037]">
+                        {step === 'phone' ? '手机号登录' : '输入验证码'}
+                    </h2>
+                    <p className="text-[#8D6E63] text-sm mt-2">
+                        {step === 'phone' ? '开启你的笔格探索之旅' : `已发送至 ${phone}`}
+                    </p>
                 </div>
 
-                <div className="bg-white/40 backdrop-blur-xl border border-white/50 p-8 rounded-2xl shadow-2xl">
-                    {step === 'phone' ? (
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="flex flex-col gap-6"
+                {step === 'phone' ? (
+                    <div className="flex flex-col gap-6">
+                        <div className="space-y-2">
+                            <label className="text-xs font-bold text-[#8D6E63] uppercase tracking-wider ml-1">手机号码</label>
+                            <input
+                                type="tel"
+                                placeholder="请输入手机号"
+                                className="w-full bg-[#FFFDF5] border border-orange-200 rounded-xl px-4 py-4 text-lg outline-none focus:ring-2 focus:ring-orange-300 transition-all placeholder-orange-200 text-[#5D4037]"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                            />
+                        </div>
+                        <button
+                            onClick={handleSendCode}
+                            disabled={loading || !phone}
+                            className="w-full bg-[#FF9F43] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#FF8F23] disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] shadow-lg shadow-orange-200"
                         >
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">手机号码</label>
-                                <input
-                                    type="tel"
-                                    placeholder="请输入手机号"
-                                    className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-4 text-lg outline-none focus:ring-2 focus:ring-black/10 focus:border-black/30 transition-all placeholder-gray-300"
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                />
-                            </div>
-                            <button
-                                onClick={handleSendCode}
-                                disabled={loading || !phone}
-                                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] shadow-lg shadow-blue-500/50"
-                            >
-                                {loading ? (
-                                    <span className="flex items-center justify-center gap-2">
-                                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                                        发送中...
-                                    </span>
-                                ) : '开启旅程'}
-                            </button>
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="flex flex-col gap-6"
+                            {loading ? '发送中...' : '获取验证码'}
+                        </button>
+                        <button
+                            onClick={() => setStep('landing')}
+                            className="text-sm text-[#BCAAA4] hover:text-[#8D6E63]"
                         >
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">验证码</label>
-                                <input
-                                    type="text"
-                                    placeholder="请输入6位验证码"
-                                    className="w-full bg-white/50 border border-gray-200 rounded-xl px-4 py-4 text-lg outline-none focus:ring-2 focus:ring-black/10 focus:border-black/30 transition-all placeholder-gray-300 tracking-widest text-center"
-                                    value={code}
-                                    onChange={(e) => setCode(e.target.value)}
-                                />
-                            </div>
-                            <button
-                                onClick={handleVerify}
-                                disabled={loading || !code}
-                                className="w-full bg-ink-black text-white py-4 rounded-xl font-medium text-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] shadow-lg shadow-black/20"
-                            >
-                                {loading ? (
-                                    <span className="flex items-center justify-center gap-2">
-                                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                                        验证中...
-                                    </span>
-                                ) : '进入测试'}
-                            </button>
-                            <button
-                                onClick={() => setStep('phone')}
-                                className="text-sm text-gray-400 hover:text-gray-600 transition-colors"
-                            >
+                            返回首页
+                        </button>
+                    </div>
+                ) : (
+                    <div className="flex flex-col gap-6">
+                        <div className="space-y-2">
+                            <label className="text-xs font-bold text-[#8D6E63] uppercase tracking-wider ml-1">验证码</label>
+                            <input
+                                type="text"
+                                placeholder="请输入6位验证码"
+                                className="w-full bg-[#FFFDF5] border border-orange-200 rounded-xl px-4 py-4 text-lg outline-none focus:ring-2 focus:ring-orange-300 transition-all placeholder-orange-200 text-[#5D4037] text-center tracking-widest"
+                                value={code}
+                                onChange={(e) => setCode(e.target.value)}
+                            />
+                        </div>
+                        <button
+                            onClick={handleVerify}
+                            disabled={loading || !code}
+                            className="w-full bg-[#FF9F43] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#FF8F23] disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] shadow-lg shadow-orange-200"
+                        >
+                            {loading ? '验证中...' : '进入测试'}
+                        </button>
+                        <div className="flex justify-between text-sm">
+                            <button onClick={() => setStep('phone')} className="text-[#BCAAA4] hover:text-[#8D6E63]">
                                 更换手机号
                             </button>
-                        </motion.div>
-                    )}
-                </div>
+                            <button onClick={handleSendCode} className="text-[#FF9F43] font-medium">
+                                重新发送
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </motion.div>
+    );
 
-                <p className="text-center text-gray-400 text-xs mt-8 font-light">
-                    进入即代表您同意探索真实的自我
-                </p>
-            </motion.div>
-        </div>
+    return (
+        <AnimatePresence mode="wait">
+            {step === 'landing' ? (
+                <React.Fragment key="landing">
+                    {renderLanding()}
+                </React.Fragment>
+            ) : (
+                <React.Fragment key="login">
+                    {renderLoginForm()}
+                </React.Fragment>
+            )}
+        </AnimatePresence>
     );
 };
 
