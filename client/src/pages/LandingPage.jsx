@@ -76,7 +76,7 @@ const LandingPage = () => {
                             <button
                                 onClick={handleSendCode}
                                 disabled={loading || !phone}
-                                className="w-full bg-ink-black text-white py-4 rounded-xl font-medium text-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] shadow-lg shadow-black/20"
+                                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] shadow-lg shadow-blue-500/50"
                             >
                                 {loading ? (
                                     <span className="flex items-center justify-center gap-2">
