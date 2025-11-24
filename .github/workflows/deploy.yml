@@ -39,6 +39,10 @@ jobs:
           cd client
           npm run build
 
+      - name: 复制 .nojekyll 文件
+        run: |
+          cp .nojekyll dist/
+
       - name: 设置 Pages
         uses: actions/configure-pages@v4
 
