@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
 import { motion, AnimatePresence } from 'framer-motion';
+import landingIllustration from '../assets/images/landing-illustration.png';
+import logoFull from '../assets/images/logo-full.png';
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -47,14 +49,13 @@ const LandingPage = () => {
             className="flex flex-col items-center justify-between min-h-screen bg-[#FFFDF5] px-6 py-10 text-center"
         >
             {/* Header / Logo */}
-            <div className="flex flex-col items-center gap-2 mt-8">
-                <div className="text-4xl">🐶</div>
-                <h1 className="text-2xl font-bold text-[#4A4A4A] tracking-wider">测测笔格</h1>
+            <div className="mt-8">
+                <img src={logoFull} alt="测测笔格" className="h-16 object-contain" />
             </div>
 
             {/* Main Content */}
-            <div className="flex flex-col items-center gap-8 mt-12 w-full max-w-md">
-                <div className="space-y-4">
+            <div className="flex flex-col items-center gap-8 mt-8 w-full max-w-md">
+                <div className="space-y-3">
                     <h2 className="text-3xl font-bold text-[#5D4037] leading-tight tracking-tight">
                         发现你的笔格人格<br />
                         <span className="text-[#FF9F43]">遇见与你同频的人!</span>
@@ -65,14 +66,14 @@ const LandingPage = () => {
                 </div>
 
                 <div className="relative w-full flex flex-col items-center">
-                    {/* 预留插画位置: 暂时用一个柔和的圆形背景代替,等待图片资源 */}
-                    <div className="w-48 h-48 rounded-full bg-gradient-to-b from-orange-50 to-orange-100 flex items-center justify-center mb-8 shadow-inner">
-                        <span className="text-orange-300 text-sm font-medium">插画位置</span>
+                    {/* 插画 */}
+                    <div className="w-64 h-64 flex items-center justify-center mb-8">
+                        <img src={landingIllustration} alt="Cute Dog Illustration" className="w-full h-full object-contain" />
                     </div>
 
                     <button
                         onClick={() => setStep('phone')}
-                        className="absolute top-32 bg-[#FF9F43] text-white text-xl font-bold py-4 px-16 rounded-full shadow-lg shadow-orange-200/80 transform transition-all hover:scale-105 hover:bg-[#FF8F23] active:scale-95 z-10"
+                        className="absolute top-48 bg-[#FF9F43] text-white text-xl font-bold py-4 px-16 rounded-full shadow-lg shadow-orange-200/80 transform transition-all hover:scale-105 hover:bg-[#FF8F23] active:scale-95 z-10"
                     >
                         开始测试
                     </button>
