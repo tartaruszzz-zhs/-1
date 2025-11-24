@@ -1,0 +1,812 @@
+[
+    {
+        "id": 1,
+        "chapter": "潜意识的投影（本能与自我）",
+        "question": "假如你的灵魂必须居住在一栋建筑里，你会选择？",
+        "options": [
+            {
+                "label": "A",
+                "text": "一座高耸入云的灯塔，孤独但坚定地守望着大海。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "一间闹市区的全透明玻璃房，能看清每个人，也被所有人看见。",
+                "type": "highlighter"
+            },
+            {
+                "label": "C",
+                "text": "一个深埋地下的防空洞，虽然幽暗但绝对安全，只有你知道入口。",
+                "type": "invisible"
+            },
+            {
+                "label": "D",
+                "text": "一间虽然有些漏风，但充满生活气息和修补痕迹的小木屋。",
+                "type": "ballpoint"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "chapter": "潜意识的投影（本能与自我）",
+        "question": "在梦中，你发现自己变成了一种液体，你是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "沸腾的岩浆，所流经之处都要留下不可磨灭的焦痕。",
+                "type": "marker"
+            },
+            {
+                "label": "B",
+                "text": "清晨的露水，晶莹剔透，虽然太阳出来就会消失，但滋润了叶子。",
+                "type": "pencil"
+            },
+            {
+                "label": "C",
+                "text": "一潭深不见底的古井水，表面波澜不惊，内里暗流涌动。",
+                "type": "brush"
+            },
+            {
+                "label": "D",
+                "text": "飘在空中的云雾，不属于地面，随风而逝。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "chapter": "潜意识的投影（本能与自我）",
+        "question": "如果你可以拥有一种超能力，你会选择？",
+        "options": [
+            {
+                "label": "A",
+                "text": "真理之眼：一眼看穿所有谎言和事物的本质。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "隐形力场：在不想面对世界时，彻底消失在人群中。",
+                "type": "invisible"
+            },
+            {
+                "label": "C",
+                "text": "色彩渲染：随心所欲地改变周围环境的颜色和情绪氛围。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "时光回溯：回到过去，修改那些让自己后悔的瞬间。",
+                "type": "pencil"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "chapter": "潜意识的投影（本能与自我）",
+        "question": "面对一个刚刚破碎的珍贵花瓶，你的第一反应是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "“碎了就是碎了，扫干净，别让碎片扎到人。”",
+                "type": "ballpoint"
+            },
+            {
+                "label": "B",
+                "text": "试图用金粉把它修补起来，让裂痕变成一种名为“金缮”的艺术。",
+                "type": "brush"
+            },
+            {
+                "label": "C",
+                "text": "极度痛心，甚至想尖叫，情绪完全被这个破碎的画面占据。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "盯着碎片发呆，思考“破碎”本身是否就是一种宿命的美感。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "chapter": "潜意识的投影（本能与自我）",
+        "question": "你认为自己最大的性格弱点更接近于？",
+        "options": [
+            {
+                "label": "A",
+                "text": "过于在意别人的看法，总是习惯性地配合他人。",
+                "type": "highlighter"
+            },
+            {
+                "label": "B",
+                "text": "固执己见，一旦认定的事情，撞了南墙也不回头。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "C",
+                "text": "优柔寡断，总觉得还没准备好，迟迟不敢下笔。",
+                "type": "pencil"
+            },
+            {
+                "label": "D",
+                "text": "封闭内心，很难真正信任一个人，总是留一手。",
+                "type": "invisible"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "chapter": "社会与人际（伪装与真实）",
+        "question": "在一场热闹的派对中，你最像？",
+        "options": [
+            {
+                "label": "A",
+                "text": "那个在角落里观察全场的人，偶尔冷冷地评价一句。",
+                "type": "quill"
+            },
+            {
+                "label": "B",
+                "text": "那个最活跃的气氛组，负责把每个人都逗笑。",
+                "type": "marker"
+            },
+            {
+                "label": "C",
+                "text": "那个默默为大家递纸巾、倒酒，照顾醉酒者的人。",
+                "type": "highlighter"
+            },
+            {
+                "label": "D",
+                "text": "那个一直在和人辩论某个严肃话题，试图说服对方的人。",
+                "type": "steel_pen"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "chapter": "社会与人际（伪装与真实）",
+        "question": "朋友向你倾诉了一个惊天秘密，你会？",
+        "options": [
+            {
+                "label": "A",
+                "text": "守口如瓶，把这个秘密烂在肚子里，像从未听过一样。",
+                "type": "invisible"
+            },
+            {
+                "label": "B",
+                "text": "帮他分析利弊，列出123点解决方案。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "C",
+                "text": "感同身受地陪他一起哭，一起骂，情绪完全同步。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "淡淡一笑，告诉他“凡事发生皆有利于我”，用哲理开导他。",
+                "type": "brush"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "chapter": "社会与人际（伪装与真实）",
+        "question": "如果你必须在身上纹身，你会纹什么？",
+        "options": [
+            {
+                "label": "A",
+                "text": "一个没有任何意义的抽象符号，只有你自己懂。",
+                "type": "invisible"
+            },
+            {
+                "label": "B",
+                "text": "父母的名字或爱人的生日，纪念重要的人。",
+                "type": "highlighter"
+            },
+            {
+                "label": "C",
+                "text": "一个哪怕以后会变形，但代表此刻决心的图案。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "D",
+                "text": "一句古老的拉丁文诗句，代表某种逝去的精神。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "chapter": "社会与人际（伪装与真实）",
+        "question": "被人误解且遭受攻击时，你的反击方式是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "正面刚：列出证据，逻辑严密地驳斥对方，直到对方哑口无言。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "太极拳：不正面冲突，四两拨千斤，让对方的攻击打在棉花上。",
+                "type": "brush"
+            },
+            {
+                "label": "C",
+                "text": "变色龙：先认怂或者模糊处理，等风头过了再做打算。",
+                "type": "pencil"
+            },
+            {
+                "label": "D",
+                "text": "无视：这根本不值得我浪费时间，转身就走，虽然心里很气。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "chapter": "社会与人际（伪装与真实）",
+        "question": "你理想中的爱情关系是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "像战友：背靠背，共同面对生活的风雨，绝对忠诚。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "B",
+                "text": "像烟火：不管能持续多久，只要那一刻燃烧得足够热烈。",
+                "type": "marker"
+            },
+            {
+                "label": "C",
+                "text": "像流水：两湾溪水汇流，顺势而为，互相包容形状。",
+                "type": "brush"
+            },
+            {
+                "label": "D",
+                "text": "像拼图：我缺失的那部分正好是你，我们互补且精密契合。",
+                "type": "steel_pen"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "chapter": "生存与职场（行动与决策）",
+        "question": "老板交给你一项不可能完成的任务，你会？",
+        "options": [
+            {
+                "label": "A",
+                "text": "尽力而为，能做多少做多少，实在不行就接受失败。",
+                "type": "pencil"
+            },
+            {
+                "label": "B",
+                "text": "虽然嘴上抱怨，但还是会想尽办法死磕到底，绝不掉链子。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "C",
+                "text": "立刻指出这个任务的不合理性，哪怕得罪老板也要说真话。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "D",
+                "text": "表面答应，实际上按自己的节奏来，只做自己认为有价值的部分。",
+                "type": "invisible"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "chapter": "生存与职场（行动与决策）",
+        "question": "你最羡慕以下哪种人？",
+        "options": [
+            {
+                "label": "A",
+                "text": "那些活得通透、自在，仿佛没有任何世俗烦恼的隐士。",
+                "type": "quill"
+            },
+            {
+                "label": "B",
+                "text": "那些能精准发现商机，总能比别人快一步看到重点的人。",
+                "type": "highlighter"
+            },
+            {
+                "label": "C",
+                "text": "那些在舞台上光芒万丈，尽情释放魅力的艺术家。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "那些历经磨难，依然笑对人生，生命力极强的人。",
+                "type": "ballpoint"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "chapter": "生存与职场（行动与决策）",
+        "question": "如果你要写一本书，书名会是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "《理性的边界：如何建立完美秩序》",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "《且听风吟：一个人的流浪手记》",
+                "type": "quill"
+            },
+            {
+                "label": "C",
+                "text": "《无为而治：顺应变化的智慧》",
+                "type": "brush"
+            },
+            {
+                "label": "D",
+                "text": "《未完待续：关于成长的100次尝试》",
+                "type": "pencil"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "chapter": "生存与职场（行动与决策）",
+        "question": "你的办公桌通常是什么状态？",
+        "options": [
+            {
+                "label": "A",
+                "text": "极其整洁，所有东西分类摆放，甚至有标签。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "只有一些关键的文件被高亮标注出来，其他的都很随意。",
+                "type": "highlighter"
+            },
+            {
+                "label": "C",
+                "text": "乱中有序，堆满了各种实用的工具，随时拿起来就能用。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "D",
+                "text": "充满了个性化的装饰，甚至有些混乱，看心情整理。",
+                "type": "marker"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "chapter": "生存与职场（行动与决策）",
+        "question": "面对突如其来的危机（如裁员、失恋），你的恢复期？",
+        "options": [
+            {
+                "label": "A",
+                "text": "很快，我适应能力很强，只要还没死就能活下去。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "B",
+                "text": "很慢，我会反复纠结是不是自己哪里做错了，不断反刍。",
+                "type": "pencil"
+            },
+            {
+                "label": "C",
+                "text": "表面没事，但内心会封闭很久，不再轻易相信同类事物。",
+                "type": "invisible"
+            },
+            {
+                "label": "D",
+                "text": "我会把这段经历转化为创作的动力或人生的谈资。",
+                "type": "brush"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "chapter": "哲学与终极（意义与归宿）",
+        "question": "世界是一片漆黑的森林，你选择成为？",
+        "options": [
+            {
+                "label": "A",
+                "text": "手电筒的光束，虽然范围有限，但能照亮别人的路。",
+                "type": "highlighter"
+            },
+            {
+                "label": "B",
+                "text": "坚硬的磐石，任由风吹雨打，我自岿然不动。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "C",
+                "text": "林间的迷雾，神秘莫测，保护着森林的秘密。",
+                "type": "invisible"
+            },
+            {
+                "label": "D",
+                "text": "一棵古树，年轮里刻画着历史，沉默地俯瞰一切。",
+                "type": "steel_pen"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "chapter": "哲学与终极（意义与归宿）",
+        "question": "你获得了一块“记忆橡皮擦”，你会擦掉？",
+        "options": [
+            {
+                "label": "A",
+                "text": "那些尴尬、不完美、犯傻的瞬间。",
+                "type": "pencil"
+            },
+            {
+                "label": "B",
+                "text": "那些让我情绪失控、歇斯底里的痛苦记忆。",
+                "type": "marker"
+            },
+            {
+                "label": "C",
+                "text": "那些我看清了人性丑恶、让我对世界失望的真相。",
+                "type": "quill"
+            },
+            {
+                "label": "D",
+                "text": "我不会擦掉任何东西，好的坏的都是修行。",
+                "type": "brush"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "chapter": "哲学与终极（意义与归宿）",
+        "question": "假如人生是一场表演，你希望你的角色是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "导演：掌控全局，确保每一步都按剧本走。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "那个只有几句台词，但每次出场都推动剧情的关键配角。",
+                "type": "highlighter"
+            },
+            {
+                "label": "C",
+                "text": "即使没有台词，也要用肢体语言抢戏的那个。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "那个坐在观众席里，冷眼看着台上闹剧的人。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "chapter": "哲学与终极（意义与归宿）",
+        "question": "下面哪个词最能让你感到安宁？",
+        "options": [
+            {
+                "label": "A",
+                "text": "秩序（Order）",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "留白（Space）",
+                "type": "brush"
+            },
+            {
+                "label": "C",
+                "text": "隐匿（Hidden）",
+                "type": "invisible"
+            },
+            {
+                "label": "D",
+                "text": "平凡（Ordinary）",
+                "type": "ballpoint"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "chapter": "哲学与终极（意义与归宿）",
+        "question": "你认为生命的意义在于？",
+        "options": [
+            {
+                "label": "A",
+                "text": "体验：去尝试更多可能性，哪怕是错的。",
+                "type": "pencil"
+            },
+            {
+                "label": "B",
+                "text": "表达：在这个世界上留下我独特的声音和色彩。",
+                "type": "marker"
+            },
+            {
+                "label": "C",
+                "text": "奉献：成为他人的光，让世界因我而清晰一点。",
+                "type": "highlighter"
+            },
+            {
+                "label": "D",
+                "text": "超脱：精神的自由翱翔，不受肉体的束缚。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "你的心像一座花园，现在的状态是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "修剪得整整齐齐的凡尔赛宫式园林。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "野花烂漫，虽然杂乱但生命力旺盛。",
+                "type": "marker"
+            },
+            {
+                "label": "C",
+                "text": "有几株珍贵的兰花被藏在温室深处，外人看不见。",
+                "type": "invisible"
+            },
+            {
+                "label": "D",
+                "text": "这里主要种植蔬菜和草药，实用为主。",
+                "type": "ballpoint"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "如果你必须放弃一种感官，你最不愿意放弃？",
+        "options": [
+            {
+                "label": "A",
+                "text": "视觉：我要看到这个世界的色彩和冲击。",
+                "type": "marker"
+            },
+            {
+                "label": "B",
+                "text": "听觉：我想听到真理的声音和思想的共鸣。",
+                "type": "quill"
+            },
+            {
+                "label": "C",
+                "text": "触觉：我要真实的触感，确认我还活着。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "D",
+                "text": "直觉（第六感）：这是我洞察世界的根本。",
+                "type": "brush"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "眼前有四扇门，必须推开一扇，你会选？",
+        "options": [
+            {
+                "label": "A",
+                "text": "挂着“闲人免进”牌子的厚重铁门。",
+                "type": "invisible"
+            },
+            {
+                "label": "B",
+                "text": "永远转动着的旋转门，代表无常。",
+                "type": "brush"
+            },
+            {
+                "label": "C",
+                "text": "门上贴满了便利贴，写满了前人的提示。",
+                "type": "highlighter"
+            },
+            {
+                "label": "D",
+                "text": "一扇看起来随时会倒塌，但门缝透出光的旧门。",
+                "type": "pencil"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "你最无法容忍别人对你的评价是？",
+        "options": [
+            {
+                "label": "A",
+                "text": "“你这人真没劲，太无聊了。”",
+                "type": "marker"
+            },
+            {
+                "label": "B",
+                "text": "“你做事太不靠谱了，没逻辑。”",
+                "type": "steel_pen"
+            },
+            {
+                "label": "C",
+                "text": "“你太自私了，从来不考虑别人。”",
+                "type": "highlighter"
+            },
+            {
+                "label": "D",
+                "text": "“你太俗气了，根本不懂精神世界。”",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "下雨天，你没有伞，你会？",
+        "options": [
+            {
+                "label": "A",
+                "text": "找个地方躲起来，等雨停了再走，不让自己淋湿。",
+                "type": "invisible"
+            },
+            {
+                "label": "B",
+                "text": "就在雨里走，淋湿了回家擦干就行，这没什么。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "C",
+                "text": "享受这场雨，甚至想在雨中奔跑。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "顺手折一片大叶子挡雨，或者看看有没有人愿意拼伞。",
+                "type": "pencil"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "你觉得“成功”的定义更接近？",
+        "options": [
+            {
+                "label": "A",
+                "text": "建立了一套被世人认可的标准或体系。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "活得明白，内心不纠结，顺其自然。",
+                "type": "brush"
+            },
+            {
+                "label": "C",
+                "text": "帮助了很多人，被周围的人深深需要。",
+                "type": "highlighter"
+            },
+            {
+                "label": "D",
+                "text": "守护住了自己的秘密领地，没被世界改变。",
+                "type": "invisible"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "假如世界末日只剩1小时，你会？",
+        "options": [
+            {
+                "label": "A",
+                "text": "写下遗书，交代清楚所有未尽事宜。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "拥抱身边的人，告诉他们我爱他们。",
+                "type": "highlighter"
+            },
+            {
+                "label": "C",
+                "text": "疯狂地做一件平时不敢做的疯狂事。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "找个安静的地方坐着，看着天空崩塌。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "你更倾向于哪种工作模式？",
+        "options": [
+            {
+                "label": "A",
+                "text": "工匠：日复一日地打磨一件东西，精益求精。",
+                "type": "ballpoint"
+            },
+            {
+                "label": "B",
+                "text": "军师：在幕后出谋划策，指点江山。",
+                "type": "brush"
+            },
+            {
+                "label": "C",
+                "text": "探险家：哪怕不知道终点，也要先迈出这一步。",
+                "type": "pencil"
+            },
+            {
+                "label": "D",
+                "text": "守护者：默默守护某个宝藏，不求闻名。",
+                "type": "invisible"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "你的“舒适区”是什么样的？",
+        "options": [
+            {
+                "label": "A",
+                "text": "一个充满了确定性、规则清晰的环境。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "一个允许我随时犯错、随时重来的环境。",
+                "type": "pencil"
+            },
+            {
+                "label": "C",
+                "text": "一个能让我尽情大笑、大哭、宣泄的环境。",
+                "type": "marker"
+            },
+            {
+                "label": "D",
+                "text": "一个没人认识我、可以完全隐身的环境。",
+                "type": "quill"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "chapter": "抽象情境（深度辨析）",
+        "question": "最后，请用一个动词结束这套测试：",
+        "options": [
+            {
+                "label": "A",
+                "text": "刻（Carve）：深刻地。",
+                "type": "steel_pen"
+            },
+            {
+                "label": "B",
+                "text": "染（Dye）：绚烂地。",
+                "type": "marker"
+            },
+            {
+                "label": "C",
+                "text": "流（Flow）：顺遂地。",
+                "type": "brush"
+            },
+            {
+                "label": "D",
+                "text": "写（Write）：务实地。",
+                "type": "ballpoint"
+            }
+        ]
+    }
+]
