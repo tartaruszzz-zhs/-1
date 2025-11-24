@@ -53,38 +53,41 @@ const LandingPage = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex flex-col items-center gap-6 mt-8">
-                <h2 className="text-3xl font-bold text-[#5D4037] leading-tight">
-                    发现你的笔格人格<br />
-                    遇见与你同频的人!
-                </h2>
-                <p className="text-[#8D6E63] text-sm font-medium">
-                    20+ 精准心理题，2分钟完成测试
-                </p>
+            <div className="flex flex-col items-center gap-8 mt-12 w-full max-w-md">
+                <div className="space-y-4">
+                    <h2 className="text-3xl font-bold text-[#5D4037] leading-tight tracking-tight">
+                        发现你的笔格人格<br />
+                        <span className="text-[#FF9F43]">遇见与你同频的人!</span>
+                    </h2>
+                    <p className="text-[#8D6E63] text-base font-medium opacity-80">
+                        20+ 精准心理题 · 2分钟完成测试
+                    </p>
+                </div>
 
-                <button
-                    onClick={() => setStep('phone')}
-                    className="bg-[#FF9F43] text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg shadow-orange-200 transform transition-transform active:scale-95 hover:bg-[#FF8F23] mt-4"
-                >
-                    开始测试
-                </button>
+                <div className="relative w-full flex flex-col items-center">
+                    {/* 预留插画位置: 暂时用一个柔和的圆形背景代替,等待图片资源 */}
+                    <div className="w-48 h-48 rounded-full bg-gradient-to-b from-orange-50 to-orange-100 flex items-center justify-center mb-8 shadow-inner">
+                        <span className="text-orange-300 text-sm font-medium">插画位置</span>
+                    </div>
 
-                {/* Illustration Placeholder */}
-                <div className="mt-8 relative w-64 h-48 flex items-center justify-center">
-                    {/* 这里可以用 CSS 画一个简单的示意图或者放 Emoji */}
-                    <div className="text-9xl">✏️🐕🎨</div>
+                    <button
+                        onClick={() => setStep('phone')}
+                        className="absolute top-32 bg-[#FF9F43] text-white text-xl font-bold py-4 px-16 rounded-full shadow-lg shadow-orange-200/80 transform transition-all hover:scale-105 hover:bg-[#FF8F23] active:scale-95 z-10"
+                    >
+                        开始测试
+                    </button>
                 </div>
             </div>
 
             {/* Footer */}
-            <div className="flex flex-col items-center gap-4 mb-4 w-full">
-                <p className="text-[#8D6E63] text-sm">
-                    已有 <span className="font-bold">14,328</span> 人参与
+            <div className="flex flex-col items-center gap-3 mb-8 w-full">
+                <p className="text-[#8D6E63] text-sm opacity-90">
+                    已有 <span className="font-bold text-[#FF9F43]">14,328</span> 人参与
                 </p>
                 <div className="flex gap-6 text-xs text-[#BCAAA4]">
-                    <span>关于我们</span>
-                    <span>隐私协议</span>
-                    <span>联系方</span>
+                    <span className="cursor-pointer hover:text-[#8D6E63]">关于我们</span>
+                    <span className="cursor-pointer hover:text-[#8D6E63]">隐私协议</span>
+                    <span className="cursor-pointer hover:text-[#8D6E63]">联系方</span>
                 </div>
             </div>
         </motion.div>
